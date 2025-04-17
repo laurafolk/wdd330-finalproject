@@ -1,0 +1,37 @@
+{
+    "savedRecipes": {
+      "john_doe": [
+        {
+          "id": 101,
+          "name": "Creamy Garlic Chicken",
+          "thumbnail_url": "https://example.com/images/garlic-chicken.jpg",
+          "description": "A rich and creamy garlic chicken dish that's easy to make and perfect for dinner.",
+          "type": "Dinner",
+          "instructions": "1. Season the chicken with salt and pepper. 2. Sauté the garlic in butter. 3. Add cream and simmer until thick. 4. Cook the chicken in the sauce until golden brown.",
+          "nutrition": {
+            "calories": "500 kcal",
+            "protein": "40g",
+            "fat": "30g",
+            "carbs": "20g"
+          }
+        }
+      ],
+      "jane_doe": [
+        {
+          "id": 102,
+          "name": "Peanut Butter Brownies",
+          "thumbnail_url": "https://example.com/images/brownies.jpg",
+          "description": "Fudgy brownies with a swirl of creamy peanut butter.",
+          "type": "Dessert",
+          "instructions": "1. Preheat oven and grease a baking pan. 2. Mix the brownie batter. 3. Swirl peanut butter into the batter. 4. Bake for 25 minutes and let cool.",
+          "nutrition": {
+            "calories": "300 kcal",
+            "protein": "6g",
+            "fat": "18g",
+            "carbs": "30g"
+          }
+        }
+      ]
+    }
+  }
+  

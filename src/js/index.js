@@ -1,6 +1,6 @@
-// import App from './app.js';
+import App from './app.js';
 
-// document.getElementById('root').appendChild(App());
+document.getElementById('root').appendChild(App());
 
 // vite.config.js
 export default {

@@ -1,0 +1,19 @@
+{
+    "results": [
+      {
+        "id": 1,
+        "name": "Spaghetti Bolognese",
+        "thumbnail_url": "https://example.com/spaghetti.jpg",
+        "description": "A classic Italian pasta dish.",
+        "type": "Dinner"
+      },
+      {
+        "id": 2,
+        "name": "Chocolate Chip Cookies",
+        "thumbnail_url": "https://example.com/cookies.jpg",
+        "description": "Delicious and chewy!",
+        "type": "Dessert"
+      }
+    ]
+  }
+    

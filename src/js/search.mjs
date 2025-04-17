@@ -1,4 +1,5 @@
 import { saveRecipe, removeSavedRecipe, getSavedRecipes } from './storageUtils.mjs';
+import { getCurrentUser } from './auth.mjs'
 
 function showAlert(message) {
   const alertBox = document.createElement('div');
@@ -8,21 +9,32 @@ function showAlert(message) {
   setTimeout(() => alertBox.remove(), 2500);
 }
 
-const url = 'https://tasty-api1.p.rapidapi.com/featured-section';
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': '88aac24a55msh80b25efa593281ep1b29d7jsnfd44213ed1b4',
-		'x-rapidapi-host': 'tasty-api1.p.rapidapi.com'
-	}
-};
+export async function searchRecipes(query) {
+  const url = `https://tasty-api1.p.rapidapi.com/recipes/list?from=0&size=12&q=${encodeURIComponent(query)}`;
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
+  const options = {
+    method: 'GET',
+    headers: {
+      'x-rapidapi-key': '88aac24a55msh80b25efa593281ep1b29d7jsnfd44213ed1b4',
+      'x-rapidapi-host': 'tasty-api1.p.rapidapi.com'
+    }
+  };
+
+  try {
+    const res = await fetch(url, options);
+    const data = await res.json();
+
+    if (data.results && data.results.length) {
+      displayRecipes(data.results);
+    } else {
+      showAlert('No recipes found.');
+      document.getElementById('recipe-results').innerHTML = '';
+    }
+
+  } catch (err) {
+    console.error('Error fetching recipes:', err);
+    showAlert('Something went wrong while searching.');
+  }
 }
 
 export function displayRecipes(recipes, showSaveButton = true) {
@@ -71,7 +83,7 @@ export function displaySavedRecipes() {
 
 export function displayUserSavedRecipes() {
   const saved = getSavedRecipes();
-  const container = document.getElementById('user-saved-recipes');
+  const container = document.getElementById('saved-recipes');
   container.innerHTML = '';
 
   saved.forEach(recipe => {
@@ -117,6 +129,6 @@ export function displayUserSavedRecipes() {
 //   });
 // }
 
-export function searchAndDisplayCategory(type) {
-  searchRecipes('', type);
-}
+// export function searchAndDisplayCategory(type) {
+//   searchRecipes('', type);
+// }

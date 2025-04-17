@@ -1,0 +1,19 @@
+{
+    "users": {
+      "john_doe": {
+        "password": "password123",
+        "preferences": {
+          "diet": "vegetarian",
+          "meal_type": "dinner"
+        }
+      },
+      "jane_doe": {
+        "password": "password456",
+        "preferences": {
+          "diet": "vegan",
+          "meal_type": "snack"
+        }
+      }
+    }
+  }
+  
